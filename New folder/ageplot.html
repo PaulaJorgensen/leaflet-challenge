@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang+"en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Adding viewport meta tag for proper responsive behaviors-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Link to CSS Style Sheet-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+     <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>US Mass Shootings</title>
+</head>
+<body class="body">
+    <!--Website Header (css)-->
+    <header class="header">
+        <h1>US Mass Shootings Analysis</h1>
+    </header>
+    <!-- Navigation Bar (bootstrap)-->      
+    <nav class=" navbar navbar-expand-lg navbar-light bg-light" >
+        <div class="container-fluid">
+            <a class="navbar-brand" style= "font-size: 20px;height: 30px;color: grey;" href="index.html">mass shootings</a>
+            <div class="navbar-nav navbar-right">
+                <ul  class="navbar-nav" >
+                    <li class="nav-item dropdown active" >
+                      <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plots</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="ageplot.html">Age Plots</a>
+                          <a class="dropdown-item" href="heatmap.html">Heat Map</a>
+                          <a class="dropdown-item" href="markers.html">Shootings Map</a>
+                          <a class="dropdown-item" href="#">Shoot vs Kill Map</a>
+                          <a class="dropdown-item" href="#">Risk Analysis</a>
+                          </div>
+                    </li>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Data</a>
+                    </li>
+                </ul>
+            </div> 
+        </div> 
+    </nav>
+    <!--Content Section-->
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-lg-5">
+            <div class="box">
+                <h3 class="title">Reflections</h3>
+                <hr>
+                <p>The expected age groups to hold the highest number of shooters was 18-24 and 25-39.
+                    What wasn't expected was the large number of shooters that feel in the 40-60 bracket.
+                    In fact, this age bracket held a higher number of shooters than the 18-24 age bracket.
+                    Another unexpected reveal was the number of shooters under the age of 18.   
+                </p>
+                <hr>
+                <a href="ageplot.html">
+                <img src="resources/age_chart.png" style="width: 450px; height: 350px" alt="Age Chart">
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-7">
+            <div class="box">
+              <h3 class="title">Shooter Ages</h3>
+              <hr>
+              <div class="container">
+                <div class="row">
+                  <div class="col-12">
+                    <a href="ageplot.html">
+                      <img src="resources/age_pie.png" style="width: 850px; height: 500px" alt="Age Chart">
+                    </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>     
+</html>

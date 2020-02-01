@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<!-- Adding viewport meta tag for proper responsive behaviors -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="heatmapStyle.css" />
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body class="body">
+  <!--Website Header (css)-->
+  <header class="header">
+      <h1>US Mass Shootings</h1>
+  </header>
+  <!-- Navigation Bar (bootstrap)-->      
+  <nav class=" navbar navbar-expand-lg navbar-light bg-light" >
+      <div class="container-fluid">
+          <a class="navbar-brand" style= "font-size: 20px;height: 30px;color: grey;" href="index.html">mass shootings</a>
+          <div class="navbar-nav navbar-right">
+              <ul  class="navbar-nav" >
+                  <li class="nav-item dropdown active" >
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plots</a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="ageplot.html">Age Plots</a>
+                        <a class="dropdown-item" href="heatmap.html">Heat Map</a>
+                        <a class="dropdown-item" href="markers.html">Shootings Map</a>
+                        <a class="dropdown-item" href="#">Shoot vs Kill Map</a>
+                        <a class="dropdown-item" href="#">Risk Analysis</a>
+                      </div>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="data.html">Data</a>
+                  </li>
+              </ul>
+          </div> 
+      </div> 
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-lg-7">
+        <div class="box">
+          <h3 class="title">The Violence Project</h3>
+          <hr>
+          <p>The data for this analysis is from the Violence Project which is a nonpartrisan think tank 
+            funded by the National Institute of Justice. This project is dedicated to reducing violence in society 
+            and improving related policy and practice through research and analysis.</p>
+          <p>The Project collected data based on the Congressional Research Service definition, which is:</p>
+          <hr>
+          <p1>"...a multiple  homicide incident in which four or more victims are murdered with firearms -
+            not including the offender(s) - within one event, and at least some of the murders occurred in 
+            a public location or locations in close geographical proximity (e.g., workplace, school, restaurant,
+            or other public settings), and the murders are not attributable to any other underlying criminal
+            activity or commonplace circumstance (aramed robbery, criminal competition, insurance fraud, argument,
+            or romantic triangle)."</p1>
+          <hr>
+          <p>Based on this definition, this database documents 171 mass shooting from 1966 - 2019 with 100 life
+            history variables.</p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-5">
+        <div class="boxMap">
+          <h3 class="title">Map</h3>
+          <hr style="line-height: 2p;">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div id="map" style="width: 600px;height:420px; justify-content: center; border: 1px solid #AAA;background-color:white;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <script type="text/javascript" src="heatmapLogic.js"></script>
+
+  <script type="text/javascript" src="leaflet-heat.js"></script>
+
+</body>
+
+</html>
